@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.upload .content{
+    width: 600px;
+    height: 400px;
+    background-color: #fafafa;
+    box-shadow: 0 0 3px 3px #e1e1e1;
+    overflow: hidden;
+}
+
+.upload .content .top{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+}
+
+.upload .content .top h5{
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.upload .content .top button{
+    margin-right: 20px;
+}
+
+.upload .content .main{
+    width: 100%;
+    height: 290px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload .content .main .big{
+    width: 480px;
+    height: 250px;
+    display: flex;
+}
+
+.upload .content .main .big .left{
+    width: 270px;
+    height: 250px;
+    border: 1px solid #e1e1e1;
+    background-color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload .content .main .big .left .big_img{
+    position: relative;
+    overflow: hidden;
+}
+
+
+.upload .content .main .big .left .big_img .box{
+    display: flex;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+
+.upload .content .main .big .left .big_img .one{
+    position: absolute;
+    z-index: 5;
+    background-color: #e1e1e1;
+    opacity: 0.5;
+}
+
+.upload .content .main .big .left .big_img .box2{
+    position: absolute;
+    display: flex;
+    z-index: 5;
+}
+
+
+.upload .content .main .big .left .big_img .two{
+
+    background-color: #e1e1e1;
+    opacity: 0.5;
+}
+
+
+.upload .content .main .big .left .big_img .cut{
+    border: 1px solid greenyellow;
+    cursor: move;
+    padding: 0px;
+}
+
+.upload .content .main .big .right{
+    width: 150px;
+    height:250px ;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.upload .content .main .big .right .m_img div{
+    width: 130px;
+    height: 130px;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload .content .main .big .right .m_img img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.upload .content .main .big .right p{
+    font-size: 12px;
+    color: #666;
+    height: 35px;
+    line-height: 35px;
+    /* margin: 0px; */
+}
+
+.upload .content .main .big .right .s_img div{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload .content .main .big .right .s_img img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.upload .content .buttom{
+    height:60px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f7;
+}
+
+.upload .content .buttom button{
+    padding: 3px 10px;
+    outline: none;
+    border-radius: 3px;
+}
+
+.upload .content .buttom button:first-child{
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+}
+
+.upload .content .buttom button:first-child:hover{
+    background-color: #f5f5f7;
+}
+
+.upload .content .buttom button:last-child{
+    font-size: 12px;
+    background-color: #0c73c2;
+    border: 0px;
+    padding: 5px 10px;
+    color: white;
+}
+
+#cavas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    display: none;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.DownLoadMapper">
+    <!--保存用户下载-->
+    <insert id="saveSong" parameterType="DownLoad">
+        insert into mydownload values(null,#{s_id},#{u_id},#{m_date},#{status})
+    </insert>
+
+    <!--修改下载歌曲状态-->
+    <update id="updateStatus" parameterType="DownLoad">
+        update mydownload set status = #{status} where s_id = #{s_id} and u_id = #{u_id}
+    </update>
+
+    <!--查询用户正在下载的歌曲信息-->
+    <select id="findUserLoading" parameterType="int" resultType="DownLoad">
+        select * from mydownload where u_id = #{uid} and status &lt; 100
+    </select>
+
+    <!--查询用户下载完毕的歌曲信息-->
+    <select id="findUserLoaded" parameterType="int" resultType="Download">
+        select * from mydownload where u_id = #{uid} and status = 100
+    </select>
+
+    <!--清空用户正在下载的音乐列表-->
+    <delete id="clearUser" parameterType="int">
+       delete  from mydownload where u_id = #{uid} and status &lt; 100
+    </delete>
+
+    <!--判断歌曲是否被下载-->
+    <select id="isDownload" resultType="int">
+        select * from mydownload where u_id = #{uid} and s_id = #{sid} and status = 100
+    </select>
+</mapper>

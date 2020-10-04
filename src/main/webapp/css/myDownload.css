@@ -1,0 +1,213 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.myDownload .content {
+    width: 1336px;
+    height: 610px;
+    background-color: #fafafa;
+    overflow-y: scroll;
+}
+
+/* 滚动条样式 */
+#style-5::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+
+}
+
+#style-5::-webkit-scrollbar-thumb {
+    background-color: #e1e1e2;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent)); */
+}
+
+#style-5::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    background-color: #F5F5F5;
+    opacity: 0;
+}
+
+.myDownload .content .top {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top: 25px;
+}
+
+.myDownload .content .top h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+.myDownload .content .top h4>span {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.myDownload .content .main {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.myDownload .content .main .all {
+    width: 120px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #44aaf8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.myDownload .content .main .all p {
+    font-size: 12px;
+    color: white;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    width: 90px;
+}
+
+.myDownload .content .main .all p:hover{
+    background-color: #3480d2;
+}
+
+.myDownload .content .main .all p span:first-child {
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.myDownload .content .main .all>span {
+    width: 30px;
+    height: 25px;
+    font-size: 25px;
+    color: white;
+    border-left: 1px solid #e1e1e1;
+    line-height: 25px;
+    text-align: center;
+}
+
+.myDownload .content .main .all>span:hover{
+    background-color: #3480d2;
+}
+
+.myDownload .content .main .search {
+    height: 26px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 10px;
+    border-radius: 13px;
+    background-color: white;
+    margin-right: 30px;
+    border: 1px solid #e1e1e1;
+}
+
+.myDownload .content .main .search input {
+    width: 140px;
+    outline: none;
+    border: 0px;
+    background-color: white;
+    font-size: 12px;
+    color: black;
+}
+
+.myDownload .content .main .search input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.myDownload .content .main .search img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.myDownload .content .main .search span{
+    color: black;
+    display: none;
+    cursor: pointer;
+}
+
+.myDownload .content .bottom {
+    width: 100%;
+}
+
+.myDownload .content .bottom table{
+    width: 100%;
+    font-size: 12px;
+    color: #444;
+}
+
+.myDownload .content .bottom table tr{
+    height: 30px;
+}
+
+.myDownload .content .bottom table tr:nth-child(odd){
+    background-color: #f5f5f7;
+}
+
+.myDownload .content .bottom table tr:hover{
+    background-color: #e6e7ea;
+}
+
+.myDownload .content .bottom table tr:first-child:hover{
+    background-color: #fafafa;
+}
+
+.myDownload .content .bottom table td{
+    padding-left: 5px;
+}
+
+.myDownload .content .bottom table tr td:first-child{
+    width: 50px;
+    text-align: end;
+    padding-right: 10px;
+    position: relative;
+}
+
+.myDownload .content .bottom table tr td:first-child span:last-child{
+    width: 14px;
+    height: 14px;
+    color: #44aaf8;
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+}
+
+.myDownload .content .bottom table tr:first-child{
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #fafafa;
+}
+
+.myDownload .content .bottom table tr:first-child td:hover{
+    background-color: #e6e7ea;
+}
+
+.myDownload .content .bottom table tr:first-child td:first-child:hover{
+    background-color: #fafafa;
+}
+
+.myDownload .content .bottom table tr:first-child td{
+    border-right: 1px solid #e1e1e1;
+
+}
+
+.myDownload .content .bottom table tr td:last-child{
+    display: none;
+}
+
+.myDownload .content .bottom table tr:first-child td:last-child{
+    border-right: 0px;
+}

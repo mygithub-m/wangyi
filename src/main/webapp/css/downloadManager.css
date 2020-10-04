@@ -1,0 +1,401 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.downloadManager .content {
+    width: 1336px;
+    height: 610px;
+    background-color: #fafafa;
+    overflow-y: scroll;
+}
+
+/* 滚动条样式 */
+#style-5::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+
+}
+
+#style-5::-webkit-scrollbar-thumb {
+    background-color: #e1e1e2;
+    /* background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent)); */
+}
+
+#style-5::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    background-color: #F5F5F5;
+    opacity: 0;
+}
+
+.downloadManager .content .top {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.downloadManager .content .top .box{
+    width: 200px;
+    height: 25px;
+    display: flex;
+}
+
+.downloadManager .content .top .box1{
+    width: 50%;
+    height: 100%;
+    line-height: 23px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid #e1e1e1;
+}
+
+.downloadManager .content .top .box div:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 0px;
+    color: #999;
+}
+
+.downloadManager .content .top .box div:last-child{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #999;
+}
+
+.downloadManager .content .top .box .select{
+    background-color: #7c7d85;
+    color: #eee!important;
+}
+
+.downloadManager .content .ed{
+    display: none;
+}
+
+.downloadManager .content .ing{
+    display: none;
+}
+
+.downloadManager .content .now{
+    display: block;
+}
+
+
+.downloadManager .content .ed .main {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.downloadManager .content .ed .box{
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.downloadManager .content .ed .box .path{
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+}
+
+.downloadManager .content .ed .main .all {
+    width: 120px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #44aaf8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.downloadManager .content .ed .main .all p {
+    font-size: 12px;
+    color: white;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    width: 90px;
+}
+
+.downloadManager .content .ed .main .all p:hover{
+    background-color: #3480d2;
+}
+
+.downloadManager .content .ed .main .all p span:first-child {
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.downloadManager .content .ed .main .all>span {
+    width: 30px;
+    height: 25px;
+    font-size: 25px;
+    color: white;
+    border-left: 1px solid #e1e1e1;
+    line-height: 25px;
+    text-align: center;
+}
+
+.downloadManager .content .ed .main .all>span:hover{
+    background-color: #3480d2;
+}
+
+.downloadManager .content .ed .main .search {
+    height: 26px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 10px;
+    border-radius: 13px;
+    background-color: white;
+    margin-right: 30px;
+    border: 1px solid #e1e1e1;
+}
+
+.downloadManager .content .ed .main .search span{
+    color: black;
+    display: none;
+    cursor: pointer;
+}
+
+.downloadManager .content .ed .main .search input {
+    width: 140px;
+    outline: none;
+    border: 0px;
+    background-color: white;
+    font-size: 12px;
+    color: black;
+}
+
+.downloadManager .content .ed .main .search input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.downloadManager .content .ed .main .search img {
+    width: 15px;
+    height: 15px;
+}
+
+.downloadManager .content .ed .bottom {
+    width: 100%;
+}
+
+.downloadManager .content .ed .bottom table{
+    width: 100%;
+    font-size: 12px;
+    color: #444;
+}
+
+.downloadManager .content .ed .bottom table tr{
+    height: 30px;
+}
+
+.downloadManager .content .ed .bottom table tr td:last-child{
+    display: none;
+}
+
+.downloadManager .content .ed .bottom table tr:nth-child(odd){
+    background-color: #f5f5f7;
+}
+
+.downloadManager .content .ed .bottom table tr:hover{
+    background-color: #e6e7ea;
+}
+
+.downloadManager .content .ed .bottom table tr:first-child:hover{
+    background-color: #fafafa;
+}
+
+.downloadManager .content .ed .bottom table td{
+    padding-left: 5px;
+}
+
+.downloadManager .content .ed .bottom table tr td:first-child{
+    width: 50px;
+    text-align: end;
+    padding-right: 10px;
+}
+
+.downloadManager .content .ed .bottom table tr:first-child{
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #fafafa;
+}
+
+.downloadManager .content .ed .bottom table tr:first-child td:hover{
+    background-color: #e6e7ea;
+}
+
+.downloadManager .content .ed .bottom table tr:first-child td:first-child:hover{
+    background-color: #fafafa;
+}
+
+.downloadManager .content .ed .bottom table tr:first-child td{
+    border-right: 1px solid #e1e1e1;
+
+}
+
+.downloadManager .content .ed .bottom table tr:first-child td:last-child{
+    border-right: 0px;
+}
+
+.downloadManager .content .ed .bottom table tr td:nth-child(2){
+    width: 3%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.downloadManager .content .ed .bottom table tr td:nth-child(2) .glyphicon-heart-empty{
+    color: #999;
+    cursor: pointer;
+}
+
+.downloadManager .content .ed .bottom table tr td:nth-child(2) .glyphicon-heart{
+    color: #cd2929;
+    cursor: pointer;
+}
+
+
+.downloadManager .content .ing .main{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.downloadManager .content .ing .main .box{
+    display: flex;
+    margin-left: 20px;
+}
+
+.downloadManager .content .ing .main .box .caozuo{
+    display: flex;
+    margin-left: 20px;
+}
+
+.downloadManager .content .ing .main .box .caozuo div{
+    width: 100px;
+    height: 23px;
+    border-radius: 3px;
+    line-height: 23px;
+    border: 1px solid #e1e1e1;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.downloadManager .content .ing .main .box .caozuo div:hover{
+    background-color: #aaa;
+}
+
+.downloadManager .content .ing .main .box .caozuo div span:first-child{
+    margin-right: 5px;
+}
+
+.downloadManager .content .ing .main .box .caozuo div:nth-child(2){
+    margin: 0px 10px;
+}
+
+.downloadManager .content .ing .main .box .path{
+    height: 25px;
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+
+.downloadManager .content .ing .bottom {
+    width: 100%;
+}
+
+.downloadManager .content .ing .bottom table{
+    width: 100%;
+    font-size: 12px;
+    color: #444;
+}
+
+.downloadManager .content .ing .bottom table tr{
+    height: 30px;
+}
+
+.downloadManager .content .ing .bottom table tr td:last-child{
+    display: none;
+}
+
+.downloadManager .content .ing .bottom table tr:nth-child(odd){
+    background-color: #f5f5f7;
+}
+
+.downloadManager .content .ing .bottom table tr:hover{
+    background-color: #e6e7ea;
+}
+
+.downloadManager .content .ing .bottom table tr:first-child:hover{
+    background-color: #fafafa;
+}
+
+.downloadManager .content .ing .bottom table td{
+    padding-left: 5px;
+}
+
+.downloadManager .content .ing .bottom table tr td:first-child{
+    width: 50px;
+    text-align: end;
+    padding-right: 10px;
+}
+
+.downloadManager .content .ing .bottom table tr:first-child{
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #fafafa;
+}
+
+.downloadManager .content .ing .bottom table tr:first-child td:hover{
+    background-color: #e6e7ea;
+}
+
+.downloadManager .content .ing .bottom table tr:first-child td:first-child:hover{
+    background-color: #fafafa;
+}
+
+.downloadManager .content .ing .bottom table tr:first-child td{
+    border-right: 1px solid #e1e1e1;
+
+}
+
+.downloadManager .content .ing .bottom table tr:first-child td:last-child{
+    border-right: 0px;
+}
+
+.downloadManager .content .ing .bottom table tr td:nth-child(2){
+    width: 35%;
+}
+
+.downloadManager .content .ing .bottom table tr td:nth-child(3)>div{
+    width: 800px;
+    height: 10px;
+    background-color: #999;
+}
+
+.downloadManager .content .ing .bottom table tr td:nth-child(3)>div>div{
+    /*width: 50%;*/
+    height: 10px;
+    background-color:#45a9f9 ;
+}

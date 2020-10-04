@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+     <!--组件扫描-->
+     <context:component-scan base-package="cn.learn.controller"/>
+
+     <!--视图解析器-->
+
+     <!--查找静态资源-->
+     <mvc:default-servlet-handler/>
+
+     <!--开启springmvc注解配置-->
+     <mvc:annotation-driven/>
+
+     <!--开启aop自动代理-->
+<!--     <aop:aspectj-autoproxy proxy-target-class="true"/>-->
+
+     <!--配置文件上传解析器-->
+     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+          <property name="maxUploadSize" value="10485760"></property>
+          <property name="defaultEncoding" value="utf-8"></property>
+     </bean>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.SongMapper">
+    <!--添加歌曲-->
+    <insert id="insertSong" parameterType="Song">
+        insert into song values (null,#{s_name},#{album.a_id},#{singer.singer_id},#{s_length},#{s_size},#{s_path});
+    </insert>
+
+    <!--通过id查询歌曲信息-->
+    <select id="findById" parameterType="int" resultType="Song">
+        select * from song where s_id=#{id}
+    </select>
+
+    <!--通过关键字搜索歌曲-->
+    <select id="searchSongs" parameterType="String" resultType="Song">
+        select * from song where s_name like #{keyword}
+    </select>
+
+    <!--通过专辑id获取专辑的所有歌曲-->
+    <select id="findByAlbumId" parameterType="int" resultType="Song">
+        select * from song where album_id = #{id}
+    </select>
+</mapper>

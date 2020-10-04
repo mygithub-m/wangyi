@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.AlbumMapper">
+    <!--添加专辑信息-->
+    <insert id="insertAlbum" parameterType="Album">
+        insert into album values(null,#{a_name},#{a_image},#{s_id})
+    </insert>
+
+    <!--通过专辑名查询专辑信息-->
+    <select id="selectByName" parameterType="String" resultType="Album">
+        select * from album where a_name = #{albumName}
+    </select>
+
+    <!--通过专辑id查询专辑信息-->
+    <select id="findById" parameterType="int" resultType="Album">
+        select * from album where a_id = #{id}
+    </select>
+
+    <!--通过歌手id获得歌手的专辑信息-->
+    <select id="findBySingerId" resultType="Album">
+        select * from album where s_id = #{id}
+    </select>
+
+    <!--用户收藏专辑-->
+    <insert id="collectAlbum">
+        insert into albumcollect values (null,#{aid},#{uid})
+    </insert>
+
+    <!--移除收藏的专辑-->
+    <delete id="deCollectAlbum">
+        delete from albumcollect where a_id = #{aid} and u_id = #{uid}
+    </delete>
+
+    <!--查询用户收藏的专辑信息-->
+    <select id="findCollectAlbum" resultType="int">
+        select a_id from albumcollect where u_id = #{uid}
+    </select>
+
+    <!--判断一个专辑是否是用户收藏-->
+    <select id="checkAlbum" resultType="int">
+        select a_id from albumcollect where u_id = #{uid} and a_id = #{aid}
+    </select>
+
+    <!--通过关键字搜索专辑-->
+    <select id="searchAlbum" parameterType="String" resultType="Album">
+        select * from album where a_name like #{keyword}
+    </select>
+</mapper>

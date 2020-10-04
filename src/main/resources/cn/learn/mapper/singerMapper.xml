@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.SingerMapper">
+    <!--添加歌手-->
+    <insert id="insertSinger" parameterType="Singer">
+        insert into singer values(null,#{singer_name},#{singer_image})
+    </insert>
+
+    <!--通过歌手名查询歌手-->
+    <select id="selectBySingerName" parameterType="String" resultType="Singer">
+        select * from singer where singer_name = #{singerName}
+    </select>
+
+    <!--通过id查询歌手信息-->
+    <select id="findById" parameterType="int" resultType="Singer">
+        select * from singer where singer_id = #{id}
+    </select>
+
+    <!--用户收藏歌手-->
+    <insert id="collectSinger">
+        insert into singercollect values (null,#{sid},#{uid})
+    </insert>
+
+    <!--移除收藏的歌手-->
+    <delete id="deCollectSinger">
+        delete from singercollect where singer_id = #{sid} and u_id = #{uid}
+    </delete>
+
+    <!--查询用户收藏的歌手信息-->
+    <select id="findCollectSinger" resultType="int">
+        select singer_id from singercollect where u_id = #{uid}
+    </select>
+
+    <!--判断一个歌手是否是用户收藏-->
+    <select id="checkSinger" resultType="int">
+        select singer_id from singercollect where u_id = #{uid} and singer_id = #{sid}
+    </select>
+
+    <!--通过关键字搜索歌手-->
+    <select id="searchSinger" parameterType="String" resultType="Singer">
+        select * from singer where singer_name like #{keyword}
+    </select>
+</mapper>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+      <!--开启组件扫描-->
+      <context:component-scan base-package="cn.learn">
+          <!--不扫描Controller注解-->
+          <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+      </context:component-scan>
+
+      <!--加载jdbc.properties-->
+      <context:property-placeholder location="classpath:jdbc.properties"/>
+
+      <!--dataSource-->
+      <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+          <property name="driverClassName" value="${jdbc.driver}"/>
+          <property name="url" value="${jdbc.url}"/>
+          <property name="username" value="${jdbc.username}"/>
+          <property name="password" value="${jdbc.password}"/>
+      </bean>
+
+     <!--spring 整合mybatis-->
+     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+         <!--配置数据源信息-->
+         <property name="dataSource" ref="dataSource"/>
+         <!--取别名-->
+         <property name="typeAliasesPackage" value="cn.learn.pojo"/>
+         <!--扫描mapper文件-->
+         <property name="mapperLocations" value="classpath:cn/learn/mapper/*.xml"/>
+     </bean>
+
+    <!--自动产生代理对象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.learn.dao"/>
+    </bean>
+
+    <!--平台事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--开启事务注解配置-->
+    <tx:annotation-driven />
+
+    <!--spring整合redis-->
+    <!--jedis连接池配置（不配置就使用默认的）
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        &lt;!&ndash;配置最大连接数&ndash;&gt;
+        <property name="maxTotal" value="50"/>
+        <property name="maxIdle" value="5"/>
+    </bean>
+
+    &lt;!&ndash;spring整合Jedis（Redis） 也就是配置连接工厂JedisConnectionFactory&ndash;&gt;
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        &lt;!&ndash;注入连接池配置&ndash;&gt;
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+        &lt;!&ndash;数据库主机&ndash;&gt;
+        <property name="hostName" value="${redis.host}"/>
+        &lt;!&ndash;数据库端口&ndash;&gt;
+        <property name="port" value="${redis.port}"/>
+    </bean>
+
+    &lt;!&ndash;配置RedisTemplate&ndash;&gt;
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        &lt;!&ndash;注入连接工厂&ndash;&gt;
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        &lt;!&ndash;因为在请求本地音乐文件时存储的是一个list集合，所以需要将结果序列化&ndash;&gt;
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"></bean>
+        </property>
+    </bean>-->
+
+</beans>

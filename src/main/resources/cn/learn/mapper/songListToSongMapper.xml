@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.SongListToSongMapper">
+
+    <!--通过歌单id查询歌单中的歌曲id-->
+    <select id="findBySLId" parameterType="int" resultType="int">
+        select s_id from songlisttosong where sl_id = #{id}
+    </select>
+
+    <!--添加歌曲到自定义歌单-->
+    <insert id="saveSong">
+        insert into songlisttosong values(null,#{sl_id},#{s_id})
+    </insert>
+    
+    <!--判断歌曲是否为用户收藏-->
+    <select id="findBySlidAndSid" resultType="int">
+        select sls_id from songlisttosong where sl_id = #{sl_id} and s_id = #{s_id}
+    </select>
+
+    <!--删除歌单中的歌曲-->
+    <delete id="deleteBySlId" parameterType="int">
+        delete from songlisttosong where sl_id = #{slId}
+    </delete>
+
+    <!--删除歌单中的某一个歌单中的一首歌曲-->
+    <delete id="deleteSong">
+        delete from songlisttosong where sl_id = #{slId} and s_id = #{sid}
+    </delete>
+
+</mapper>

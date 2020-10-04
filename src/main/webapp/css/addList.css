@@ -1,0 +1,111 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+.addList{
+    width: 1536px;
+    height: 720px;
+    position: relative;
+}
+
+.addList .content{
+    width: 250px;
+    height: 180px;
+    background-color: #fafafa;
+    box-shadow: 0px 0px 3px 3px #ddd;
+    position: absolute;
+    border-radius: 5px;
+    top: 173px;
+    left: 172px;
+}
+
+.addList .triangle em{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 10px dashed #eee;
+    border-color:transparent #eee transparent transparent;
+    left: -21px;
+    top: 20px;
+    z-index: 100;
+}
+.addList .triangle span{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 10px dashed #eee;
+    border-color: transparent  #fafafa transparent transparent;
+    left: -20px;
+    top: 20px;
+    z-index: 100;
+}
+
+.addList .content .top{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.addList .content .top h5{
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.addList .content .main{
+    height: 60px;
+}
+
+.addList .content .main input:first-child{
+    width: 230px;
+    height: 30px;
+    border: 1px solid #e1e1e1;
+    outline: none;
+    margin-bottom: 5px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.addList .content .main input{
+    margin-left: 10px;
+}
+
+.addList .content .main span{
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.addList .content .bottom{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addList .content .bottom button{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    border: 0px;
+    outline: none;
+    letter-spacing: 5px;
+}
+
+.addList .content .bottom button:first-child{
+    background-color: #0c73c2;
+    color: white;
+    opacity: 0.5;
+}
+
+.addList .content .bottom button:last-child{
+    background-color: white;
+    color: black;
+    margin-left: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+.addList .content .bottom button:last-child:hover{
+    background-color: #fafafa;
+}

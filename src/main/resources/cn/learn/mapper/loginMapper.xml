@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.LoginMapper">
+    <!--通过用户名和密码登录-->
+    <select id="selectByNameAndPwd" parameterType="User" resultType="User">
+        select * from user where u_nickname = #{u_nickname} and u_password = #{u_password};
+    </select>
+
+    <!--通过用户id登录(主要是用于用户修改信息后的自动登录，刷新信息)-->
+    <select id="selectById" parameterType="int" resultType="User">
+        select * from user where u_id = #{u_id}
+    </select>
+</mapper>

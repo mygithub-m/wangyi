@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.LocalSongMapper">
+
+    <!--通过本地音乐信息查询出远程歌曲信息-->
+    <select id="selectBySong" parameterType="Song" resultType="Song">
+        select * from song where
+                             s_name = #{s_name} and
+                             album_id = (select a_id from album where a_name=#{album.a_name}) and
+                             singer_id = (select singer_id from singer where singer_name = #{singer.singer_name})
+    </select>
+</mapper>

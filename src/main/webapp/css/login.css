@@ -1,0 +1,154 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.login{
+    width: 350px;
+    height: 500px;
+    background-color: #fafafa;
+    margin: 100px auto;
+    box-shadow: 0px 0px 5px 5px #ddd;
+    position: relative;
+}
+
+.login .content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login .content .form{
+    width: 250px;
+}
+
+.login .content .box1{
+    width: 250px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.login .content .box1 .name{
+    border-bottom: 1px solid #aaa;
+}
+
+.login .content .box1 div{
+    height: 35px;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+}
+
+.login .content .box1 div span{
+    margin: 0px 10px;
+}
+
+.login .content .box1 div input{
+    outline: none;
+    padding-left: 5px;
+    border: 0px;
+}
+
+.login .content .box1 div input::-webkit-input-placeholder{
+    color: #aaa;
+    font-size: 12px;
+}
+
+.login .content .auto{
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.login .content .auto span{
+    font-size: 12px;
+    color: #aaa;
+}
+
+.login .content .auto input{
+    margin: 0px;
+    margin-right: 5px;
+}
+
+.login .content .btn{
+    padding: 0px;
+}
+
+.login .content .btn input{
+    width: 250px;
+    height: 35px;
+    background-color: #45A9F9;
+    color: white;
+    border: 0px;
+    outline: none;
+    border-radius: 3px;
+    letter-spacing: 10px;
+}
+
+.login .content .reg{
+    width: 250px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.login .content .reg a{
+    color: black;
+    text-decoration: underline black;
+}
+
+.login .content .close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.login .content .close button{
+    outline: none;
+}
+
+.login .content .returnLogin{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 12px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.login .content .msg {
+    position: absolute;
+    bottom: 125px;
+    left: 57px;
+    z-index: 2;
+    width: 250px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    color: red;
+    font-weight: bold;
+}
+
+/* 搞不懂为什么它生效了 */
+#login{
+    position: absolute;
+    top: 0px;
+    left: 600px;
+    display: none;
+    z-index: 1000;
+}
+
+#register{
+    position: absolute;
+    top: 0px;
+    left: 600px;
+    display: none;
+}

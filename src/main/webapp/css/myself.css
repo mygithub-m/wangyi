@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.myself{
+    width: 250px;
+    background-color: #fafafa;
+    box-shadow: 0 6px 3px 3px #ddd;
+}
+
+.myself .content .box {
+    width: 250px;
+    border: 1px solid #eee;
+    position: relative;
+}
+
+.triangle em{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 10px dashed #eee;
+    border-color: transparent transparent #eee transparent;
+    left: 107px;
+    top: -21px;
+}
+.triangle span{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 10px dashed #eee;
+    border-color: transparent transparent #fafafa transparent;
+    left: 107px;
+    top: -20px;
+}
+
+.myself .content .box .me img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.myself .content .box .me{
+    font-size: 16px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e3e3e3;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.myself .content .box p{
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    font-size: 12px;
+    border-bottom: 1px solid #e3e3e3;
+    cursor: pointer;
+}
+
+.myself .content .box p span:first-child{
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.myself .content .box .exit{
+    height: 40px;
+    border: none;
+}
+
+#myself {
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 100px;
+    display: none;
+}

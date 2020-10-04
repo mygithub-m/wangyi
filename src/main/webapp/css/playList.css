@@ -1,0 +1,184 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.playList .content {
+    width: 500px;
+    height: 600px;
+    background-color: #fafafa;
+    box-shadow: 0px 0px 3px 3px #c4c4c5;
+}
+
+.playList .content .top {
+    width: 100%;
+    height: 40px;
+    background-color: #f4f4f6;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.playList .content .top .toggle {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playList .content .top .toggle .box{
+    width: 200px;
+    height: 25px;
+    /* border-radius: 5px;
+    overflow: hidden; */
+    display: flex;
+}
+
+.playList .content .top .toggle .box div{
+    width: 50%;
+    height: 100%;
+    line-height: 23px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid #e1e1e1;
+}
+
+.playList .content .top .toggle .box .list{
+    border-right: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.playList .content .top .toggle .box .history{
+    border-left: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.playList .content .top .toggle .box .list{
+    border-right: 1px solid #e1e1e1;
+}
+
+.list_select {
+    background-color: #7c7d85;
+    color: white;
+}
+
+.playList .content .top .close button{
+    border: 0px;
+    outline: none;
+}
+
+.playList .content .main{
+    width: 100%;
+    height: 30px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.playList .content .main > span:first-child{
+    margin-left: 20px;
+}
+
+.playList .content .main .box2{
+    margin-right: 20px;
+    display: flex;
+    cursor: pointer;
+}
+
+.playList .content .main .box2 .add{
+    margin-right: 10px;
+    border-right: 1px solid #999;
+}
+
+
+.playList .content .bottom {
+    width: 100%;
+    height:530px ;
+    overflow-y: scroll;
+}
+
+/* 滚动条样式 */
+#style-5::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+
+}
+
+#style-5::-webkit-scrollbar-thumb {
+    background-color: #e1e1e2;
+}
+
+#style-5::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    opacity: 0;
+}
+
+.playList .content .bottom table{
+    width: 100%;
+    font-size: 12px;
+    color: #444;
+}
+
+.playList .content .bottom table tr{
+    height: 30px;
+}
+
+.playList .content .bottom table tr:nth-child(odd){
+    background-color: #f5f5f7;
+}
+
+.playList .content .bottom table tr:hover{
+    background-color: #e6e7ea;
+}
+
+
+.playList .content .bottom table td{
+    padding-left: 5px;
+    text-overflow: ellipsis;
+}
+
+.myDownload .content .bottom table tr:first-child td:last-child{
+    border-right: 0px;
+}
+
+.playList .content .bottom table tr td:last-child{
+    width: 15%;
+}
+
+.playList .content .bottom table tr td:first-child span:first-child{
+    display: none;
+}
+
+.playList .content .bottom table tr td:first-child span:last-child{
+    color: #5cb3f5;
+    font-size: 12px;
+    margin-left: 10px;
+    display: none;
+}
+
+.playList .content .bottom table tr td:first-child{
+    width: 5%;
+}
+.playList .content .bottom table tr td:nth-child(2){
+    width: 55%;
+}
+
+.playList .content .bottom table tr td:nth-last-child(2){
+    width: 5%;
+}
+
+#playList{
+    position: absolute;
+    z-index: -1;
+    bottom: 50px;
+    right: 0px;
+    display: none;
+}

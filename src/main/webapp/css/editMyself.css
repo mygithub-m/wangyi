@@ -1,0 +1,238 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.editMyself{
+    width: 1336px;
+    height: 610px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.editMyself .big_box{
+    width: 1280px;
+    height: 580px;
+}
+
+.editMyself .big_box .top{
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.editMyself .content .big_box .top h4{
+    margin: 0px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.editMyself .content .small_box{
+    margin-top: 40px;
+    display: flex;
+}
+
+
+.editMyself .content .small_box .left label{
+    font-size: 12px;
+    color: #888;
+    font-weight: lighter;
+}
+
+.editMyself .content .small_box .left .nickname{
+    width: 400px;
+    outline: none;
+    border: 1px solid #e1e1e1;
+    background-color: white;
+    padding: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.editMyself .content .small_box .left .introduce{
+    display: flex;
+    margin-top: 30px;
+}
+
+.editMyself .content .small_box .left .introduce .text{
+    width: 400px;
+    height: 70px;
+    border: 1px solid #e1e1e1;
+    padding: 5px;
+    background-color: white;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.editMyself .content .small_box .left .introduce .text textarea{
+    width: 390px;
+    height: 40px;
+    resize: none;
+    outline: none;
+    border: 0px;
+}
+
+.editMyself .content .small_box .left .introduce .text span{
+    float: right;
+}
+
+.editMyself .content .small_box .left .sex{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.editMyself .content .small_box .left .sex label{
+    margin-right: 5px;
+}
+
+.editMyself .content .small_box .left .sex input{
+    margin-left: 30px;
+    width: 14px;
+    height: 14px;
+}
+
+.editMyself .content .small_box .left select{
+    margin-left: 10px;
+    outline: none;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    padding: 3px;
+    color: black;
+    font-size: 12px;
+}
+
+.editMyself .content .small_box .left .address{
+    margin-top: 26px;
+    position: relative;
+}
+
+.editMyself .content .small_box .left .address input{
+    border-radius: 3px;
+    font-size: 12px;
+    border: 1px solid #e1e1e1;
+    outline: none;
+    width: 73px;
+    margin-right: 10px;
+}
+
+.editMyself .content .small_box .left .address .sheng{
+    position: absolute;
+    top: 19px;
+    left: 30px;
+    display: none;
+}
+
+.editMyself .content .small_box .left .address .shi{
+    position: absolute;
+    top: 19px;
+    left: 117px;
+    display: none;
+}
+
+.editMyself .content .small_box .left .address .qu{
+    position: absolute;
+    top: 19px;
+    left: 205px;
+    display: none;
+}
+
+.editMyself .content .small_box .left .save{
+    width: 80px;
+    height: 25px;
+    background-color: #0c73c2;
+    color: white;
+    outline: none;
+    border: 0px;
+    border-radius: 3px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.editMyself .content .small_box .left .cancel{
+    width: 80px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+
+.editMyself .content .small_box .left .cancel:hover{
+    background-color: #e1e1e1;
+}
+
+.editMyself .content .small_box .right{
+    margin-left: 50px;
+}
+
+
+.editMyself .content .small_box .right .img img{
+    width: 150px;
+    height: 150px;
+}
+
+.editMyself .content .small_box .right .img button{
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    outline: none;
+    border-radius: 3px;
+    margin-left: 30px;
+}
+
+.editMyself .content .small_box .right .img input{
+    display: none;
+}
+
+.editMyself .content .small_box .right .img button:hover{
+    background-color: #e1e1e1;
+}
+
+.editMyself .content .small_box .msg{
+    position: absolute;
+    top: 310px;
+    left: 650px;
+    z-index: 1000;
+    background-color: black;
+    opacity: 0.8;
+    display: none;
+}
+
+.editMyself .content .small_box .msg p{
+    width: 250px;
+    height: 80px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editMyself .content .small_box .msg span:first-child{
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+#upload{
+    position: absolute;
+    z-index: 20;
+    top: 100px;
+    left: 450px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+

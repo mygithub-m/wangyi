@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.RegisterMapper">
+    <!--用户注册-->
+    <insert id="addUser" parameterType="User">
+        insert into user(u_id,u_nickname,u_password,u_head_image,u_register_date) value(null,#{u_nickname},#{u_password},#{u_head_image},#{u_register_date})
+    </insert>
+
+    <!--用户信息修改-->
+    <update id="updateUser" parameterType="User">
+        update user set
+                  u_nickname = #{u_nickname},
+                  u_sex=#{u_sex},
+                  u_birthday=#{u_birthday},
+                  u_address=#{u_address},
+                  u_introduce=#{u_introduce}
+                                  where u_id=#{u_id}
+    </update>
+
+    <!--修改用户头像信息-->
+    <update id="updateHead" parameterType="User">
+        update user set u_head_image = #{u_head_image} where u_id = #{u_id}
+    </update>
+</mapper>

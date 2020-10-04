@@ -1,0 +1,20 @@
+.songList .content .top .box1 .little_box .caozuo .d,.e{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.songList .content .top .box1 .little_box .caozuo .d span:last-child{
+    color: #3480d2;
+}
+
+.songList .content .top .box1 .little_box .caozuo .a span:last-child{
+    border: 0px;
+    color: #999;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.songList .content .bottom table tr td:nth-child(2){
+    color: #999;
+}

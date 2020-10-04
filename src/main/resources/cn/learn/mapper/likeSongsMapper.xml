@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.dao.LikeSongsMapper">
+
+    <!--通过用户id查询用户喜欢的歌曲-->
+    <select id="findLike" parameterType="int" resultType="int">
+        select s_id from mylike where u_id = #{id}
+    </select>
+
+    <!--判断一首歌曲是不是用户喜欢的歌曲-->
+    <select id="findByUIdAndSId" resultType="int">
+        select s_id from mylike where u_id = #{uid} and s_id = #{sid}
+    </select>
+
+    <!--添加歌曲到我喜欢歌单-->
+    <insert id="addLikeSong">
+        insert into mylike values(null,#{sid},#{uid})
+    </insert>
+
+    <!--将歌曲从我喜欢中移除-->
+    <delete id="deleteSong">
+        delete from mylike where u_id = #{uid} and s_id = #{sid}
+    </delete>
+
+
+
+</mapper>
