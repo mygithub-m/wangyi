@@ -70,7 +70,9 @@ public class PlayListUtils {
 
         for (Song song : localSongs) {   //获取远程音乐id,并将其赋值给对应歌曲
             Song newSong = localSongService.selectByLocal(song);
-            song.setS_id(newSong.getS_id());
+            if (newSong != null){
+                song.setS_id(newSong.getS_id());
+            }
         }
         return localSongs;
     }

@@ -67,19 +67,22 @@ public class LocalSongController {
     /**
      * 获取本地音乐列表
      * 同时用作播放全部的音乐列表查询
+     *
      * @return
      */
     @GetMapping("/local")
     @ResponseBody
     public List<Song> getLocalSongs() {
-            //调用工具类获取本地音乐文件
-            List<Song> songs = FileUtil.getLocalSongs();
+        //调用工具类获取本地音乐文件
+        List<Song> songs = FileUtil.getLocalSongs();
 
-            for (Song song : songs) {   //获取远程音乐id,并将其赋值给对应歌曲
-                Song newSong = localSongService.selectByLocal(song);
+        for (Song song : songs) {   //获取远程音乐id,并将其赋值给对应歌曲
+            Song newSong = localSongService.selectByLocal(song);
+            if (newSong != null) {
                 song.setS_id(newSong.getS_id());
             }
-            System.out.println("我从文件中来");
-            return songs;
+        }
+        System.out.println("我从文件中来");
+        return songs;
     }
 }

@@ -2,6 +2,7 @@ package cn.learn.controller;
 
 import cn.learn.pojo.User;
 import cn.learn.service.RegisterService;
+import cn.learn.utils.PathUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -32,16 +33,16 @@ public class RegisterController {
     @ResponseBody
     public String uploadHead(@RequestParam("file") MultipartFile file,
                              HttpSession session){
-        String uploadPath = "/usr/local/tomcat8/apache-tomcat-8.5.57/webapps/music_player_user_headImage/";  //文件上传位置
+        String uploadPath = PathUtils.HEAD_PATH;  //文件上传位置
         User user = (User) session.getAttribute("loginUser");  //获取现在的用户信息
-        String filename = uploadPath + user.getU_id() + ".png";   //拼接一个用户头像路径
+        String filename = uploadPath + user.getU_id() + PathUtils.IMAGE_FORMAT;   //拼接一个用户头像路径
 
         try {
             /*这个位置应该要考虑到文件夹不存在的情况，需要先判断文件路径是否存在，不存在需要先创建*/
             file.transferTo(new File(filename));   //存储用户头像信息
 
             //如果上传成功，则修改用户头像信息
-            String httpPath = "http://116.62.224.97:8080/music_player_user_headImage/"+user.getU_id()+".png";   //头像网络地址
+            String httpPath = PathUtils.HEAD_HTTP_PATH + user.getU_id() + PathUtils.IMAGE_FORMAT;   //头像网络地址
             user.setU_head_image(httpPath);
             Integer result = registerService.updateHead(user);  //修改头像信息
             if (result == 1){  //修改成功

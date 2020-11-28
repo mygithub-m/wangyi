@@ -27,8 +27,8 @@ import java.util.UUID;
  */
 public class FileUtil {
 
-    private static final File SCANFILE = new File("C:\\Users\\3031874211\\Desktop\\wangyi");  //默认扫描目录
-    private static final String FILEFORMAT = ".mp3";  //默认识别音乐格式
+    private static final File SCANFILE = new File(PathUtils.LOCAL_SONG_PATH);  //默认扫描目录
+    private static final String FILEFORMAT = PathUtils.SONG_FORMAT;  //默认识别音乐格式
 
     /**
      * 获取本地音乐文件
@@ -93,11 +93,13 @@ public class FileUtil {
                 album1.setA_name(album);
                 Singer singer1 = new Singer();
                 singer1.setSinger_name(singer);
+                //这个路径没什么用
                 singer1.setSinger_image("http://localhost:8080/music_player_singer_image/head.png");
                 song.setSinger(singer1);
                 song.setS_length(s_length);
                 song.setS_size(size);
-                song.setS_path("http://localhost:8080/file/" + file.getName());
+                //通过修改server配置文件可以达到访问本地音乐文件的作用
+                song.setS_path( PathUtils.LOCAL_SONG_PLAY_PATH + file.getName());
 
                 //歌曲封面操作
                 String path = null;  //封面图片存储路径
@@ -105,7 +107,7 @@ public class FileUtil {
                     System.out.println("读取歌曲封面失败");
                 } else {
                     //将图片存起来
-                    path = "E:\\Tomcat 8\\apache-tomcat-8.5.49\\webapps\\music_player_song_image\\" + song.getS_name() + ".png";
+                    path = PathUtils.ALBUM_SAVE_PAHT + song.getS_name() + PathUtils.IMAGE_FORMAT;
                     if (new File(path).exists()) {  //判断文件是否已经存在，如果已经存在则不用写入了
 
                     } else {  //生成文件
@@ -118,7 +120,7 @@ public class FileUtil {
                             e.printStackTrace();
                         }
                     }
-                    album1.setA_image("http://localhost:8080/music_player_song_image/" + song.getS_name() + ".png");
+                    //album1.setA_image("http://localhost:8080/music_player_song_image/" + song.getS_name() + ".png");
                 }
 
                 song.setAlbum(album1);  //添加专辑

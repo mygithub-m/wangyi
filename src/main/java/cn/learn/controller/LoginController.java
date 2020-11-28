@@ -67,6 +67,8 @@ public class LoginController {
     @GetMapping("/isLogin")
     @ResponseBody
     public String isLogin(HttpSession session) {
+        //这里session的默认存活时间为30分钟，如果超过这个时间前端会出现，明明用户已经登录，当
+        //要去查看用户信息时弹出登录框
         User user = (User) session.getAttribute("loginUser");
         if (user != null) {
             //说明用户已经登录

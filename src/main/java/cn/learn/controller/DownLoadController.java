@@ -4,6 +4,7 @@ import cn.learn.pojo.DownLoad;
 import cn.learn.pojo.Song;
 import cn.learn.service.DownLoadService;
 import cn.learn.service.SongService;
+import cn.learn.utils.PathUtils;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -182,8 +183,7 @@ public class DownLoadController {
         System.out.println(songs);
         //进行歌曲的下载操作
         //文件下载的url
-        String fixedUrl = "E:\\Tomcat 8\\apache-tomcat-8.5.49\\webapps\\music_player_remote_song\\";  //本地测试下载地址
-        //String fixedUrl = "/usr/local/tomcat8/apache-tomcat-8.5.57/webapps/music_player_remote_song/";  //服务器使用下载地址
+        String fixedUrl = PathUtils.SONG_LOAD_PATH;  //本地测试下载地址
         for (Song song : songs) {
             if (flag){
                 return;
@@ -269,7 +269,7 @@ public class DownLoadController {
 
 
     /**
-     * 使用FileUtils下载文件
+     * 使用FileUtils下载文件(未使用)
      *
      * @param sid
      * @param response
@@ -286,11 +286,11 @@ public class DownLoadController {
 
         try {
             fileName = URLEncoder.encode(fileName, "utf-8").replace("+", "%20");
-            URL url = new URL("http://localhost:8080/music_player_remote_song/" + fileName);
+            URL url = new URL(PathUtils.SONG_HTTP_LOAD_PATH + fileName);
             URLConnection urlConnection = url.openConnection();
             long length = urlConnection.getContentLengthLong();
             System.out.println(length);
-            File file = new File("C:\\Users\\3031874211\\Desktop\\downloadTest\\" + fileName1);
+            File file = new File(PathUtils.SONG_SAVE_PATH + fileName1);
             FileUtils.copyURLToFile(url, file);
             System.out.println("下载成功");
         } catch (MalformedURLException e) {
